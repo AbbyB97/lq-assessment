@@ -31,6 +31,9 @@ const StyledDiv = styled.div`
     }
 
     @media ${device.tablet} {
+      width: 60vw;
+    }
+    @media ${device.laptop} {
       width: 40vw;
     }
   }
