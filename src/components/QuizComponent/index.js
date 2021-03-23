@@ -18,13 +18,8 @@ const QuizComponent = () => {
         <h3 className="mb-3">LearnQ Assignment</h3>
         <Container className="card-container ">
           <Card>
-            {/* <Card.Img
-              className="mx-auto mt-3 w-75"
-              variant="top"
-              src={quizBanner}
-            /> */}
             <Card.Body>
-              <Card.Title>Select Your difficulty</Card.Title>
+              <Card.Title>Solve the question</Card.Title>
               <Card.Text>
                 The Questions will be asked as per this selection
               </Card.Text>

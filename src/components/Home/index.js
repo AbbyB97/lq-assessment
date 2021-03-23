@@ -37,13 +37,25 @@ const Home = () => {
               </Card.Text>
               <div className="d-flex justify-content-between">
                 <div className="d-flex justify-content-between">
-                  <Button className="mx-2" variant="secondary">
+                  <Button
+                    style={{ minWidth: "75px" }}
+                    className="mx-2"
+                    variant="secondary"
+                  >
                     Easy
                   </Button>
-                  <Button className="mx-2" variant="secondary">
+                  <Button
+                    style={{ minWidth: "75px" }}
+                    className="mx-2"
+                    variant="secondary"
+                  >
                     Middle
                   </Button>
-                  <Button className="mx-2" variant="secondary">
+                  <Button
+                    style={{ minWidth: "75px" }}
+                    className="mx-2"
+                    variant="secondary"
+                  >
                     Hard
                   </Button>
                 </div>
@@ -67,5 +79,4 @@ const StyledHome = styled.div`
     text-align: center;
     padding: 0;
   }
-
 `;
