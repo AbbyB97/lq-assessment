@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <StyledContainer>
       <StyledHome>
-        <h3 className="">LearnQ Assignment</h3>
+        <h3 className="mb-3">LearnQ Assignment</h3>
         <Container className="card-container ">
           <Card>
             <Card.Img
@@ -67,13 +67,5 @@ const StyledHome = styled.div`
     text-align: center;
     padding: 0;
   }
-  .card-container {
-    @media ${device.mobileS} {
-      width: 80vw;
-    }
 
-    @media ${device.tablet} {
-      width: 40vw;
-    }
-  }
 `;
