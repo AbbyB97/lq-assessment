@@ -7,6 +7,7 @@ import {
   Button,
   Card,
   ButtonGroup,
+  Form,
 } from "react-bootstrap";
 import styled from "styled-components";
 import FadeContainer from "../../widgets/FadeContainer";
@@ -22,10 +23,33 @@ const QuizComponent = () => {
               <Card.Title>Answer the question</Card.Title>
               <Card.Text>Why sky is blue?</Card.Text>
               <Container fluid>
-                <Row>Option</Row>
-                <Row>Option</Row>
-                <Row>Option</Row>
-                <Row>Option</Row>
+                <Form>
+                  <Form.Check
+                    type="radio"
+                    label="first radio first radio first radio first radio first radio first radio first radio first radio "
+                    name="formHorizontalRadios"
+                    id="formHorizontalRadios1"
+                  />
+                  <Form.Check
+                    type="radio"
+                    label="second radio"
+                    name="formHorizontalRadios"
+                    id="formHorizontalRadios2"
+                  />
+                  <Form.Check
+                    type="radio"
+                    label="third radio"
+                    name="formHorizontalRadios"
+                    id="formHorizontalRadios3"
+                  />
+                  <Form.Check
+                    type="radio"
+                    label="Fouth radio"
+                    name="formHorizontalRadios"
+                    id="formHorizontalRadios4"
+                  />
+                </Form>
+
                 <Row>
                   <Col>
                     <Button
