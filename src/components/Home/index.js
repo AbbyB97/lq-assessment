@@ -53,9 +53,13 @@ const Home = () => {
                     </Button>
                   </Col>
                 </Row>
-                <Row className="justify-content-center">
+                <Row>
                   <Col>
-                    <Button className="w-100" onClick={goTopQuiz} variant="primary">
+                    <Button
+                      className="w-100"
+                      onClick={goTopQuiz}
+                      variant="primary"
+                    >
                       Continue <i className="fas fa-angle-right"></i>
                     </Button>
                   </Col>

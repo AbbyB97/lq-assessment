@@ -19,29 +19,25 @@ const QuizComponent = () => {
         <Container className="card-container ">
           <Card>
             <Card.Body>
-              <Card.Title>Solve the question</Card.Title>
-              <Card.Text>
-                The Questions will be asked as per this selection
-              </Card.Text>
-              <div className="d-flex justify-content-between">
-                <div className="d-flex justify-content-between">
-                  <Button className="mx-2" variant="secondary">
-                    Easy
-                  </Button>
-                  <Button className="mx-2" variant="secondary">
-                    Middle
-                  </Button>
-                  <Button className="mx-2" variant="secondary">
-                    Hard
-                  </Button>
-                </div>
-                <Button
-                  // onClick={goTopQuiz}
-                  variant="primary"
-                >
-                  <i className="fas fa-angle-right"></i>
-                </Button>
-              </div>
+              <Card.Title>Answer the question</Card.Title>
+              <Card.Text>Why sky is blue?</Card.Text>
+              <Container fluid>
+                <Row>Option</Row>
+                <Row>Option</Row>
+                <Row>Option</Row>
+                <Row>Option</Row>
+                <Row>
+                  <Col>
+                    <Button
+                      className="w-100"
+                      onClick={() => console.log("next")}
+                      variant="primary"
+                    >
+                      Next <i className="fas fa-angle-right"></i>
+                    </Button>
+                  </Col>
+                </Row>
+              </Container>
             </Card.Body>
           </Card>
         </Container>
