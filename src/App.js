@@ -21,7 +21,7 @@ function App() {
 export default App;
 
 const StyledDiv = styled.div`
-  height: 100vh;
+  /* height: 100%; */
   background-color: #2196f3;
   padding: 2rem;
 

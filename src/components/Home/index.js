@@ -35,34 +35,32 @@ const Home = () => {
               <Card.Text>
                 The Questions will be asked as per this selection
               </Card.Text>
-              <div className="d-flex justify-content-between">
-                <div className="d-flex justify-content-between">
-                  <Button
-                    style={{ minWidth: "75px" }}
-                    className="mx-2"
-                    variant="secondary"
-                  >
-                    Easy
-                  </Button>
-                  <Button
-                    style={{ minWidth: "75px" }}
-                    className="mx-2"
-                    variant="secondary"
-                  >
-                    Middle
-                  </Button>
-                  <Button
-                    style={{ minWidth: "75px" }}
-                    className="mx-2"
-                    variant="secondary"
-                  >
-                    Hard
-                  </Button>
-                </div>
-                <Button onClick={goTopQuiz} variant="primary">
-                  <i className="fas fa-angle-right"></i>
-                </Button>
-              </div>
+              <Container fluid>
+                <Row>
+                  <Col md={4} xs={12}>
+                    <Button className=" w-100 my-2" variant="secondary">
+                      Easy
+                    </Button>
+                  </Col>
+                  <Col md={4} xs={12}>
+                    <Button className="w-100 my-2" variant="secondary">
+                      Middle
+                    </Button>
+                  </Col>
+                  <Col md={4} xs={12}>
+                    <Button className="w-100 my-2" variant="secondary">
+                      Hard
+                    </Button>
+                  </Col>
+                </Row>
+                <Row className="justify-content-center">
+                  <Col>
+                    <Button className="w-100" onClick={goTopQuiz} variant="primary">
+                      Continue <i className="fas fa-angle-right"></i>
+                    </Button>
+                  </Col>
+                </Row>
+              </Container>
             </Card.Body>
           </Card>
         </Container>
