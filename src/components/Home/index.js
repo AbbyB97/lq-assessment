@@ -10,7 +10,7 @@ import {
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import quizBanner from "../../dist/images/cardImages/quizBanner.png";
-import StyledContainer from "../../widgets/StyledContainer";
+import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <StyledContainer>
+    <FadeContainer>
       <StyledHome>
         <h3 className="mb-3">LearnQ Assignment</h3>
         <Container className="card-container ">
@@ -55,7 +55,7 @@ const Home = () => {
           </Card>
         </Container>
       </StyledHome>
-    </StyledContainer>
+    </FadeContainer>
   );
 };
 

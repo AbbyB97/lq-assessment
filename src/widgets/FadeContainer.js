@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 
-const StyledContainer = styled(Container)`
+const FadeContainer = styled(Container)`
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
@@ -18,4 +18,4 @@ const StyledContainer = styled(Container)`
   }
 `;
 
-export default StyledContainer;
+export default FadeContainer;
