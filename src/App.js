@@ -5,7 +5,10 @@ import QuizComponent from "./components/QuizComponent";
 
 function App() {
   return (
-    <div>
+    <div
+      className="p-4"
+      style={{ backgroundColor: "#2196f3", height: "100vh" }}
+    >
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />

@@ -7,18 +7,23 @@ import {
   Card,
   ButtonGroup,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import quizBanner from "../../dist/images/cardImages/quizBanner.png";
 import StyledContainer from "../../widgets/StyledContainer";
 import { device } from "../../utils/mediaQuery";
 
 const Home = () => {
+  const history = useHistory();
+  const goTopQuiz = () => {
+    history.push("/quiz");
+  };
+
   return (
     <StyledContainer>
       <StyledHome>
-        <h3 className="my-3">LearnQ Assignment</h3>
-        <Container className="card-container">
+        <h3 className="">LearnQ Assignment</h3>
+        <Container className="card-container ">
           <Card>
             <Card.Img
               className="mx-auto mt-3 w-75"
@@ -42,31 +47,11 @@ const Home = () => {
                     Hard
                   </Button>
                 </div>
-                <Button variant="primary">
-                  <i class="fas fa-angle-right"></i>
+                <Button onClick={goTopQuiz} variant="primary">
+                  <i className="fas fa-angle-right"></i>
                 </Button>
               </div>
             </Card.Body>
-            {/* <h4>Select Your difficulty</h4>
-          <Container>
-            <Row>
-              <Col md={4} xs={12}>
-                Easy
-              </Col>
-              <Col md={4} xs={12}>
-                Medium
-              </Col>
-              <Col md={4} xs={12}>
-                Hard
-              </Col>
-            </Row>
-
-            <Row>
-              <Button className="mt-2" variant="dark">
-                Lets Begin!
-              </Button>
-            </Row>
-          </Container> */}
           </Card>
         </Container>
       </StyledHome>
@@ -80,6 +65,7 @@ const StyledHome = styled.div`
   h3 {
     margin: 0;
     text-align: center;
+    padding: 0;
   }
   .card-container {
     @media ${device.mobileS} {
