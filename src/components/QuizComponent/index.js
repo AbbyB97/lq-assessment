@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import {
   Container,
@@ -17,6 +17,7 @@ const QuizComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
   const questionSet = useSelector((state) => state.quizReducer.questionSet);
 
+  const [selected, setSelected] = useState(null);
   const history = useHistory();
   const { question } = useParams();
 
@@ -24,16 +25,7 @@ const QuizComponent = () => {
     history.push("/");
   }
 
-  if (questionSet) {
-    console.log("question  ", question);
-
-    console.log("question set ", questionSet[question]);
-  }
-
   const handleNext = () => {
-    console.log("questionSet.length", questionSet.length);
-    console.log("question ", question);
-
     if (parseInt(question) + 1 !== questionSet.length) {
       history.push(`/quiz/${parseInt(question) + 1}`);
     } else {
@@ -60,6 +52,9 @@ const QuizComponent = () => {
                         label={questionSet[question].option_1}
                         name="formHorizontalRadios"
                         id="formHorizontalRadios1"
+                        onClick={() =>
+                          setSelected(questionSet[question].option_1)
+                        }
                       />
                       <Form.Check
                         className="my-2"
@@ -67,6 +62,9 @@ const QuizComponent = () => {
                         label={questionSet[question].option_2}
                         name="formHorizontalRadios"
                         id="formHorizontalRadios2"
+                        onClick={() =>
+                          setSelected(questionSet[question].option_2)
+                        }
                       />
                       <Form.Check
                         className="my-2"
@@ -74,6 +72,9 @@ const QuizComponent = () => {
                         label={questionSet[question].option_3}
                         name="formHorizontalRadios"
                         id="formHorizontalRadios3"
+                        onClick={() =>
+                          setSelected(questionSet[question].option_3)
+                        }
                       />
                       <Form.Check
                         className="my-2"
@@ -81,6 +82,9 @@ const QuizComponent = () => {
                         label={questionSet[question].option_4}
                         name="formHorizontalRadios"
                         id="formHorizontalRadios4"
+                        onClick={() =>
+                          setSelected(questionSet[question].option_4)
+                        }
                       />
                     </Form>
                   </Row>

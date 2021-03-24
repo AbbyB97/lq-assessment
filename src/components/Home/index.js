@@ -23,7 +23,6 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const goTopQuiz = () => {
-    console.log("selected dff", difficulty);
     if (difficulty !== "") {
       dispatch(setDifficultyAction(difficulty));
       history.push("/quiz/0");
