@@ -6,6 +6,8 @@ import ResultComponent from "./components/ResultComponent";
 import QuizComponent from "./components/QuizComponent";
 import { device } from "./utils/mediaQuery";
 import "rodal/lib/rodal.css";
+// import resultImg from "../dist/images/cardImages/resImg.jpg";
+import resultImg from "./dist/images/cardImages/resImg.jpg";
 
 function App() {
   return (

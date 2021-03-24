@@ -12,13 +12,18 @@ import styled from "styled-components";
 import resultImg from "../../dist/images/cardImages/resImg.jpg";
 import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import HomeModal from "../../widgets/HomeModal";
 import { simpleAction, setDifficultyAction } from "../../redux/actions";
 
 const ResultComponent = () => {
   const history = useHistory();
 
+  const quizReducer = useSelector((state) => state.quizReducer);
+
+  if (quizReducer && quizReducer.difficulty == "") {
+    history.push("/");
+  }
   return (
     <FadeContainer>
       <StyledHome>
