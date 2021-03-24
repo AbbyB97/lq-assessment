@@ -52,10 +52,10 @@ const QuizComponent = () => {
                   }}
                   className=""
                 >
-                  <Card.Text style={{ fontSize: "1.3rem" }}>
-                    {questionSet[question].question}
+                  <Card.Text style={{ fontSize: "1.4rem" }}>
+                    {`Q. ${parseInt(question)+1})  ${questionSet[question].question}`}
                   </Card.Text>
-                  <Container fluid className="" style={{ fontSize: "1.1rem" }}>
+                  <Container fluid className="" style={{ fontSize: "1.2rem" }}>
                     <Row>
                       <Form>
                         <Form.Check
@@ -129,5 +129,14 @@ const StyledQuizComp = styled.div`
     margin: 0;
     text-align: center;
     padding: 0;
+  }
+
+  .form-check-label {
+    /* color: red; */
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+  .form-check-input {
+    margin-top: 8px;
   }
 `;
