@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Row,
@@ -20,6 +20,11 @@ const ResultComponent = () => {
   const history = useHistory();
 
   const quizReducer = useSelector((state) => state.quizReducer);
+  const [loading, setLoading] = useState(true);
+
+  const imageLoaded = () => {
+    setLoading(false);
+  };
 
   if (quizReducer && quizReducer.difficulty == "") {
     history.push("/");
@@ -30,10 +35,17 @@ const ResultComponent = () => {
         <h3 className="mb-3">Result</h3>
         <Container style={{ height: "100vh" }} className="card-container pb-3">
           <Card>
+            <div
+              style={{ display: loading ? "block" : "none", height: "224px" }}
+            >
+              Loading images,
+            </div>
             <Card.Img
+              style={{ display: loading ? "none" : "block" }}
               className="mx-auto mt-3 w-50"
               variant="top"
               src={resultImg}
+              onLoad={imageLoaded}
             />
             <Card.Body style={{ minHeight: "" }}>
               <Card.Title>Your score is : </Card.Title>
