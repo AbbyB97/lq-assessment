@@ -15,7 +15,6 @@ import { device } from "../../utils/mediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import HomeModal from "../../widgets/HomeModal";
 import { simpleAction, setDifficultyAction } from "../../redux/actions";
-import OnImagesLoaded from "react-on-images-loaded";
 
 const ResultComponent = () => {
   const history = useHistory();
