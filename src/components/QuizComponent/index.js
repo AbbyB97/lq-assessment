@@ -41,54 +41,65 @@ const QuizComponent = () => {
           <Container className="card-container pb-3">
             <Card>
               <Card.Body style={{ minHeight: "90vh" }}>
-                <Card.Title>Answer the following question</Card.Title>
-                <Card.Text>{questionSet[question].question}</Card.Text>
-                <Container fluid className="">
-                  <Row>
-                    <Form>
-                      <Form.Check
-                        className="my-2"
-                        type="radio"
-                        label={questionSet[question].option_1}
-                        name="formHorizontalRadios"
-                        id="formHorizontalRadios1"
-                        onClick={() =>
-                          setSelected(questionSet[question].option_1)
-                        }
-                      />
-                      <Form.Check
-                        className="my-2"
-                        type="radio"
-                        label={questionSet[question].option_2}
-                        name="formHorizontalRadios"
-                        id="formHorizontalRadios2"
-                        onClick={() =>
-                          setSelected(questionSet[question].option_2)
-                        }
-                      />
-                      <Form.Check
-                        className="my-2"
-                        type="radio"
-                        label={questionSet[question].option_3}
-                        name="formHorizontalRadios"
-                        id="formHorizontalRadios3"
-                        onClick={() =>
-                          setSelected(questionSet[question].option_3)
-                        }
-                      />
-                      <Form.Check
-                        className="my-2"
-                        type="radio"
-                        label={questionSet[question].option_4}
-                        name="formHorizontalRadios"
-                        id="formHorizontalRadios4"
-                        onClick={() =>
-                          setSelected(questionSet[question].option_4)
-                        }
-                      />
-                    </Form>
-                  </Row>
-                </Container>
+                <Card.Title>Select your answer and click next </Card.Title>
+                <div
+                  style={{
+                    minHeight: "70vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    // alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  className=""
+                >
+                  <Card.Text>{questionSet[question].question}</Card.Text>
+                  <Container fluid className="">
+                    <Row>
+                      <Form>
+                        <Form.Check
+                          className="my-2"
+                          type="radio"
+                          label={questionSet[question].option_1}
+                          name="formHorizontalRadios"
+                          id="formHorizontalRadios1"
+                          onClick={() =>
+                            setSelected(questionSet[question].option_1)
+                          }
+                        />
+                        <Form.Check
+                          className="my-2"
+                          type="radio"
+                          label={questionSet[question].option_2}
+                          name="formHorizontalRadios"
+                          id="formHorizontalRadios2"
+                          onClick={() =>
+                            setSelected(questionSet[question].option_2)
+                          }
+                        />
+                        <Form.Check
+                          className="my-2"
+                          type="radio"
+                          label={questionSet[question].option_3}
+                          name="formHorizontalRadios"
+                          id="formHorizontalRadios3"
+                          onClick={() =>
+                            setSelected(questionSet[question].option_3)
+                          }
+                        />
+                        <Form.Check
+                          className="my-2"
+                          type="radio"
+                          label={questionSet[question].option_4}
+                          name="formHorizontalRadios"
+                          id="formHorizontalRadios4"
+                          onClick={() =>
+                            setSelected(questionSet[question].option_4)
+                          }
+                        />
+                      </Form>
+                    </Row>
+                  </Container>
+                </div>
               </Card.Body>
               <Container>
                 <Row className="justify-content-center">
