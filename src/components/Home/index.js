@@ -36,7 +36,7 @@ const Home = () => {
     <FadeContainer>
       <StyledHome>
         <h3 className="mb-3">LearnQ Assignment</h3>
-        <Container className="card-container pb-3 ">
+        <Container style={{ height: "100vh" }} className="card-container pb-5 ">
           <Card>
             <Card.Img
               className="mx-auto mt-3 w-75"
