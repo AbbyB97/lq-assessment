@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import {
   Container,
   Row,
@@ -12,71 +12,96 @@ import {
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import FadeContainer from "../../widgets/FadeContainer";
-import quizQuestions from "../../static/questions";
 
 const QuizComponent = () => {
-  console.log("quiz comp", quizQuestions);
   const quizReducer = useSelector((state) => state.quizReducer);
-  console.log("qz", quizReducer);
+  const questionSet = useSelector((state) => state.quizReducer.questionSet);
+
   const history = useHistory();
+  const { question } = useParams();
+
   if (quizReducer && quizReducer.difficulty == "") {
     history.push("/");
   }
+
+  if (questionSet) {
+    console.log("question  ", question);
+
+    console.log("question set ", questionSet[question]);
+  }
+
+  const handleNext = () => {
+    console.log("questionSet.length", questionSet.length);
+    console.log("question ", question);
+
+    if (parseInt(question) + 1 !== questionSet.length) {
+      history.push(`/quiz/${parseInt(question) + 1}`);
+    } else {
+      history.push(`/result`);
+    }
+  };
+
   return (
-    <FadeContainer>
-      <StyledQuizComp>
-        <h3 className="mb-3">LearnQ Assignment</h3>
-        <Container className="card-container pb-3">
-          <Card>
-            <Card.Body style={{ minHeight: "90vh" }}>
-              <Card.Title>Answer the question</Card.Title>
-              <Card.Text>Why sky is blue?</Card.Text>
-              <Container fluid className="">
-                <Row>
-                  <Form>
-                    <Form.Check
-                      type="radio"
-                      label="first radio first radio first radio first radio first radio first radio first radio first radio "
-                      name="formHorizontalRadios"
-                      id="formHorizontalRadios1"
-                    />
-                    <Form.Check
-                      type="radio"
-                      label="second radio"
-                      name="formHorizontalRadios"
-                      id="formHorizontalRadios2"
-                    />
-                    <Form.Check
-                      type="radio"
-                      label="third radio"
-                      name="formHorizontalRadios"
-                      id="formHorizontalRadios3"
-                    />
-                    <Form.Check
-                      type="radio"
-                      label="Fouth radio"
-                      name="formHorizontalRadios"
-                      id="formHorizontalRadios4"
-                    />
-                  </Form>
+    questionSet && (
+      <FadeContainer>
+        <StyledQuizComp>
+          <h3 className="mb-3">LearnQ Assignment</h3>
+          <Container className="card-container pb-3">
+            <Card>
+              <Card.Body style={{ minHeight: "90vh" }}>
+                <Card.Title>Answer the following question</Card.Title>
+                <Card.Text>{questionSet[question].question}</Card.Text>
+                <Container fluid className="">
+                  <Row>
+                    <Form>
+                      <Form.Check
+                        className="my-2"
+                        type="radio"
+                        label={questionSet[question].option_1}
+                        name="formHorizontalRadios"
+                        id="formHorizontalRadios1"
+                      />
+                      <Form.Check
+                        className="my-2"
+                        type="radio"
+                        label={questionSet[question].option_2}
+                        name="formHorizontalRadios"
+                        id="formHorizontalRadios2"
+                      />
+                      <Form.Check
+                        className="my-2"
+                        type="radio"
+                        label={questionSet[question].option_3}
+                        name="formHorizontalRadios"
+                        id="formHorizontalRadios3"
+                      />
+                      <Form.Check
+                        className="my-2"
+                        type="radio"
+                        label={questionSet[question].option_4}
+                        name="formHorizontalRadios"
+                        id="formHorizontalRadios4"
+                      />
+                    </Form>
+                  </Row>
+                </Container>
+              </Card.Body>
+              <Container>
+                <Row className="justify-content-center">
+                  <Button
+                    className="w-75 my-2"
+                    onClick={handleNext}
+                    variant="primary"
+                  >
+                    Next <i className="fas fa-angle-right"></i>
+                  </Button>
                 </Row>
               </Container>
-            </Card.Body>
-            <Container>
-              <Row className="justify-content-center">
-                <Button
-                  className="w-75 my-2"
-                  onClick={() => console.log("next")}
-                  variant="primary"
-                >
-                  Next <i className="fas fa-angle-right"></i>
-                </Button>
-              </Row>
-            </Container>
-          </Card>
-        </Container>
-      </StyledQuizComp>
-    </FadeContainer>
+            </Card>
+          </Container>
+        </StyledQuizComp>
+      </FadeContainer>
+    )
   );
 };
 

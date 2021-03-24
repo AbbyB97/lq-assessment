@@ -26,7 +26,7 @@ const Home = () => {
     console.log("selected dff", difficulty);
     if (difficulty !== "") {
       dispatch(setDifficultyAction(difficulty));
-      history.push("/quiz");
+      history.push("/quiz/0");
     } else {
       setVisible(true);
       dispatch(simpleAction());
