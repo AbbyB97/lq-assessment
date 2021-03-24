@@ -44,17 +44,18 @@ const Home = () => {
               src={quizBanner}
             />
             <Card.Body>
-              <Card.Title>Select Your difficulty</Card.Title>
-              <Card.Text>
-                The Questions will be asked as per this selection
-              </Card.Text>
               <Container fluid>
+                <Card.Title>Select Your difficulty</Card.Title>
+                <Card.Text>
+                  The Questions will be asked as per this selection
+                </Card.Text>
                 <Row>
                   <Col md={4} xs={12}>
                     <Button
                       className=" w-100 my-2"
                       onClick={() => setDifficulty("easy")}
                       variant="secondary"
+                      active={difficulty === "easy"}
                     >
                       Easy
                     </Button>
@@ -64,6 +65,7 @@ const Home = () => {
                       className="w-100 my-2"
                       onClick={() => setDifficulty("medium")}
                       variant="secondary"
+                      active={difficulty === "medium"}
                     >
                       Medium
                     </Button>
@@ -73,6 +75,7 @@ const Home = () => {
                       className="w-100 my-2"
                       onClick={() => setDifficulty("hard")}
                       variant="secondary"
+                      active={difficulty === "hard"}
                     >
                       Hard
                     </Button>
