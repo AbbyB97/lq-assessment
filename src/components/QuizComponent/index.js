@@ -11,8 +11,10 @@ import {
 } from "react-bootstrap";
 import styled from "styled-components";
 import FadeContainer from "../../widgets/FadeContainer";
+import quizQuestions from "../../static/questions";
 
 const QuizComponent = () => {
+  console.log("quiz comp", quizQuestions);
   return (
     <FadeContainer>
       <StyledQuizComp>

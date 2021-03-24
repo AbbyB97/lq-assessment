@@ -214,3 +214,86 @@ const questions = [
     "Difficulty Level": "Hard",
   },
 ];
+
+const quizQuestions = {
+  easy: [
+    {
+      question: "An algebraic expression containing three terms is called a",
+      option_1: "monomial",
+      option_2: "binomial",
+      option_3: "trinomial",
+      option_4: "all of these",
+      correct: "trinomial",
+      marks: 1,
+    },
+    {
+      question:
+        "Number of terms in the expression 3.x^2.y - 2.y^2.z - z^2.x + 5 is",
+      option_1: 2,
+      option_2: 3,
+      option_3: 4,
+      option_4: 5,
+      correct: 3,
+      marks: 1,
+    },
+    {
+      question: "The terms of expression 4.x^2 - 3.x.y are:",
+      option_1: "4.x^2 and -3.x.y",
+      option_2: "4.x^2 and 3.x.y",
+      option_3: "4.x^2 and -x.y",
+      option_4: "x^2 and x.y",
+      correct: "4.x^2 and -3.x.y",
+      marks: 1,
+    },
+    {
+      question: "The subtraction of 5 times of y from x is",
+      option_1: "5x - y",
+      option_2: "y - 5x",
+      option_3: "x - 5y",
+      option_4: "5y - x",
+      correct: "x - 5y",
+      marks: 1,
+    },
+    {
+      question: "The value of 3.x^2 - 5.x + 3 when x = 1 is",
+      option_1: 1,
+      option_2: 0,
+      option_3: -1,
+      option_4: 11,
+      correct: 1,
+      marks: 1,
+    },
+    {
+      question: "(5/6)^0 =",
+      option_1: 1,
+      option_2: "6/5",
+      option_3: 0,
+      option_4: "None of these",
+      correct: 1,
+      marks: 1,
+    },
+    {
+      question: "(-1)^50 × (-1)^51 × (1)^100 × (-1)^101 =",
+      option_1: -1,
+      option_2: 1,
+      option_3: 0,
+      option_4: 2,
+      correct: 1,
+      marks: 1,
+    },
+    {
+      question:
+        "Find the mode for the data set, which shows the heights( in inches ) of 10 students in a class: 60, 65, 63, 62, 65, 70, 62, 68, 60, 65",
+      option_1: 62,
+      option_2: 65,
+      option_3: 70,
+      option_4: 60,
+      correct: 65,
+      marks: 1,
+    },
+  ],
+  medium: [],
+  hard: [],
+};
+
+export default quizQuestions;
