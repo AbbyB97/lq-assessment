@@ -10,6 +10,7 @@ import {
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import resultImg from "../../dist/images/cardImages/resImgMin.jpg";
+import loader from "../../dist/loader/loader.gif";
 import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,7 +39,7 @@ const ResultComponent = () => {
             <div
               style={{ display: loading ? "block" : "none", height: "224px" }}
             >
-              Loading images,
+              {/* <p>loading image</p> */}
             </div>
             <Card.Img
               style={{ display: loading ? "none" : "block" }}
@@ -47,6 +48,12 @@ const ResultComponent = () => {
               src={resultImg}
               onLoad={imageLoaded}
             />
+            {/* <img
+              style={{ height: "60px", width: "60px" }}
+              src={loader}
+              alt="loader"
+            /> */}
+
             <Card.Body style={{ minHeight: "" }}>
               <Card.Title>Your score is : </Card.Title>
               <Card.Text>Congrats on completing the test!</Card.Text>
