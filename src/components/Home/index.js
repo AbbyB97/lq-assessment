@@ -12,8 +12,7 @@ import styled from "styled-components";
 import quizBanner from "../../dist/images/cardImages/quizBanner.png";
 import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
-import Rodal from "rodal";
-import confusedRobo from "../../dist/images/cardImages/confusedRobo.png";
+import HomeModal from "../../widgets/HomeModal";
 
 const Home = () => {
   const history = useHistory();
@@ -90,32 +89,11 @@ const Home = () => {
           </Card>
         </Container>
       </StyledHome>
-      <Rodal
+      <HomeModal
         animation={"slideDown"}
         visible={visible}
-        onClose={() => setVisible(false)}
-      >
-        <Container>
-          <Row>
-            <h5 className=" mt-4 mx-auto">
-              Please select the level of difficulty
-            </h5>
-          </Row>
-          <Row className="justify-content-center">
-            <img
-              className="w-25 h-25"
-              style={{ borderRadius: "1rem" }}
-              src={confusedRobo}
-              alt="robo"
-            />
-          </Row>
-          <Row className="justify-content-center">
-            <Button className="w-75 my-3" onClick={() => setVisible(false)}>
-              close{" "}
-            </Button>
-          </Row>
-        </Container>
-      </Rodal>
+        setVisible={setVisible}
+      />
     </FadeContainer>
   );
 };
