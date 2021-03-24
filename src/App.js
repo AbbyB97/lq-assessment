@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import styled from "styled-components";
 import QuizComponent from "./components/QuizComponent";
 import { device } from "./utils/mediaQuery";
+import "rodal/lib/rodal.css";
 
 function App() {
   return (

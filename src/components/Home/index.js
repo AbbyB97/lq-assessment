@@ -12,13 +12,20 @@ import styled from "styled-components";
 import quizBanner from "../../dist/images/cardImages/quizBanner.png";
 import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
+import Rodal from "rodal";
+import confusedRobo from "../../dist/images/cardImages/confusedRobo.png";
 
 const Home = () => {
   const history = useHistory();
   const [difficulty, setDifficulty] = useState("");
+  const [visible, setVisible] = useState(false);
   const goTopQuiz = () => {
     console.log("selected dff", difficulty);
-    history.push("/quiz");
+    if (difficulty !== "") {
+      history.push("/quiz");
+    } else {
+      setVisible(true);
+    }
   };
 
   return (
@@ -83,6 +90,32 @@ const Home = () => {
           </Card>
         </Container>
       </StyledHome>
+      <Rodal
+        animation={"slideDown"}
+        visible={visible}
+        onClose={() => setVisible(false)}
+      >
+        <Container>
+          <Row>
+            <h5 className=" mt-4 mx-auto">
+              Please select the level of difficulty
+            </h5>
+          </Row>
+          <Row className="justify-content-center">
+            <img
+              className="w-25 h-25"
+              style={{ borderRadius: "1rem" }}
+              src={confusedRobo}
+              alt="robo"
+            />
+          </Row>
+          <Row className="justify-content-center">
+            <Button className="w-75 my-3" onClick={() => setVisible(false)}>
+              close{" "}
+            </Button>
+          </Row>
+        </Container>
+      </Rodal>
     </FadeContainer>
   );
 };
