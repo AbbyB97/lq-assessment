@@ -26,43 +26,37 @@ const ResultComponent = () => {
     history.push("/");
   }
   return (
-    <OnImagesLoaded>
-      {" "}
-      <FadeContainer>
-        <StyledHome>
-          <h3 className="mb-3">Result</h3>
-          <Container
-            style={{ height: "100vh" }}
-            className="card-container pb-3"
-          >
-            <Card>
-              <Card.Img
-                className="mx-auto mt-3 w-50"
-                variant="top"
-                src={resultImg}
-              />
-              <Card.Body style={{ minHeight: "" }}>
-                <Card.Title>Your score is : </Card.Title>
-                <Card.Text>Congrats on completing the test!</Card.Text>
-              </Card.Body>
-              <Container fluid>
-                <Row>
-                  <Col>
-                    <Button
-                      className="w-100 mb-2"
-                      variant="primary"
-                      onClick={() => history.push("/")}
-                    >
-                      Take test again <i className="fas fa-angle-right"></i>
-                    </Button>
-                  </Col>
-                </Row>
-              </Container>
-            </Card>
-          </Container>
-        </StyledHome>
-      </FadeContainer>
-    </OnImagesLoaded>
+    <FadeContainer>
+      <StyledHome>
+        <h3 className="mb-3">Result</h3>
+        <Container style={{ height: "100vh" }} className="card-container pb-3">
+          <Card>
+            <Card.Img
+              className="mx-auto mt-3 w-50"
+              variant="top"
+              src={resultImg}
+            />
+            <Card.Body style={{ minHeight: "" }}>
+              <Card.Title>Your score is : </Card.Title>
+              <Card.Text>Congrats on completing the test!</Card.Text>
+            </Card.Body>
+            <Container fluid>
+              <Row>
+                <Col>
+                  <Button
+                    className="w-100 mb-2"
+                    variant="primary"
+                    onClick={() => history.push("/")}
+                  >
+                    Take test again <i className="fas fa-angle-right"></i>
+                  </Button>
+                </Col>
+              </Row>
+            </Container>
+          </Card>
+        </Container>
+      </StyledHome>
+    </FadeContainer>
   );
 };
 
