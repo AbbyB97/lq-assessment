@@ -40,7 +40,7 @@ const QuizComponent = () => {
           <h3 className="mb-3">LearnQ Assignment</h3>
           <Container className="card-container pb-3">
             <Card>
-              <Card.Body style={{ minHeight: "90vh" }}>
+              <Card.Body style={{ minHeight: "75vh" }}>
                 <Card.Title>Select your answer and click next </Card.Title>
                 <div
                   style={{
@@ -52,8 +52,10 @@ const QuizComponent = () => {
                   }}
                   className=""
                 >
-                  <Card.Text>{questionSet[question].question}</Card.Text>
-                  <Container fluid className="">
+                  <Card.Text style={{ fontSize: "1.3rem" }}>
+                    {questionSet[question].question}
+                  </Card.Text>
+                  <Container fluid className="" style={{ fontSize: "1.1rem" }}>
                     <Row>
                       <Form>
                         <Form.Check
