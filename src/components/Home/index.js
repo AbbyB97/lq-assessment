@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Row,
@@ -15,7 +15,9 @@ import { device } from "../../utils/mediaQuery";
 
 const Home = () => {
   const history = useHistory();
+  const [difficulty, setDifficulty] = useState("");
   const goTopQuiz = () => {
+    console.log("selected dff", difficulty);
     history.push("/quiz");
   };
 
@@ -38,17 +40,29 @@ const Home = () => {
               <Container fluid>
                 <Row>
                   <Col md={4} xs={12}>
-                    <Button className=" w-100 my-2" variant="secondary">
+                    <Button
+                      className=" w-100 my-2"
+                      onClick={() => setDifficulty("easy")}
+                      variant="secondary"
+                    >
                       Easy
                     </Button>
                   </Col>
                   <Col md={4} xs={12}>
-                    <Button className="w-100 my-2" variant="secondary">
-                      Middle
+                    <Button
+                      className="w-100 my-2"
+                      onClick={() => setDifficulty("medium")}
+                      variant="secondary"
+                    >
+                      Medium
                     </Button>
                   </Col>
                   <Col md={4} xs={12}>
-                    <Button className="w-100 my-2" variant="secondary">
+                    <Button
+                      className="w-100 my-2"
+                      onClick={() => setDifficulty("hard")}
+                      variant="secondary"
+                    >
                       Hard
                     </Button>
                   </Col>
