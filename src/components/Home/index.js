@@ -12,18 +12,23 @@ import styled from "styled-components";
 import quizBanner from "../../dist/images/cardImages/quizBanner.png";
 import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
+import { useDispatch } from "react-redux";
 import HomeModal from "../../widgets/HomeModal";
+import { simpleAction } from "../../redux/actions";
 
 const Home = () => {
   const history = useHistory();
   const [difficulty, setDifficulty] = useState("");
   const [visible, setVisible] = useState(false);
+  const dispatch = useDispatch();
+
   const goTopQuiz = () => {
     console.log("selected dff", difficulty);
     if (difficulty !== "") {
       history.push("/quiz");
     } else {
       setVisible(true);
+      dispatch(simpleAction());
     }
   };
 
