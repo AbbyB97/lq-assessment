@@ -23,11 +23,11 @@ export default App;
 const StyledDiv = styled.div`
   /* height: 100%; */
   background-color: #2196f3;
-  padding: 2rem;
+  padding: 0rem;
 
   .card-container {
     @media ${device.mobileS} {
-      width: 80vw;
+      width: 90vw;
     }
 
     @media ${device.tablet} {
