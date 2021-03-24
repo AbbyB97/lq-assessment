@@ -27,14 +27,14 @@ const StyledDiv = styled.div`
 
   .card-container {
     @media ${device.mobileS} {
-      width: 90vw;
+      width: 92vw;
     }
 
     @media ${device.tablet} {
-      width: 60vw;
+      width: 70vw;
     }
     @media ${device.laptop} {
-      width: 40vw;
+      width: 45vw;
     }
   }
 `;
