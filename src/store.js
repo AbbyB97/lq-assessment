@@ -1,11 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
 import rootReducer from "./redux/reducer/rootReducer";
-import { devToolsEnhancer } from "redux-devtools-extension";
-
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 export default function configureStore() {
-  return createStore(
-    rootReducer,
-    devToolsEnhancer()
-    // Specify name here, actionsBlacklist, actionsCreators and other options if needed
-  );
+  return createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 }
