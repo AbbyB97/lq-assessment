@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   Container,
   Row,
@@ -9,12 +9,19 @@ import {
   ButtonGroup,
   Form,
 } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import FadeContainer from "../../widgets/FadeContainer";
 import quizQuestions from "../../static/questions";
 
 const QuizComponent = () => {
   console.log("quiz comp", quizQuestions);
+  const quizReducer = useSelector((state) => state.quizReducer);
+  console.log("qz", quizReducer);
+  const history = useHistory();
+  if (quizReducer && quizReducer.difficulty == "") {
+    history.push("/");
+  }
   return (
     <FadeContainer>
       <StyledQuizComp>

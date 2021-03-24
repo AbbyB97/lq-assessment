@@ -14,7 +14,7 @@ import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
 import { useDispatch } from "react-redux";
 import HomeModal from "../../widgets/HomeModal";
-import { simpleAction } from "../../redux/actions";
+import { simpleAction, setDifficultyAction } from "../../redux/actions";
 
 const Home = () => {
   const history = useHistory();
@@ -25,6 +25,7 @@ const Home = () => {
   const goTopQuiz = () => {
     console.log("selected dff", difficulty);
     if (difficulty !== "") {
+      dispatch(setDifficultyAction(difficulty));
       history.push("/quiz");
     } else {
       setVisible(true);
