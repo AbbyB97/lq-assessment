@@ -15,6 +15,7 @@ import MathJax from "react-mathjax-preview";
 const QuizComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
   const questionSet = useSelector((state) => state.quizReducer.questionSet);
+  const answers = useSelector((state) => state.quizReducer.answers);
 
   const dispatch = useDispatch();
 
@@ -36,6 +37,17 @@ const QuizComponent = () => {
   //     }
   //   };
   // }, [question]);
+
+  useEffect(() => {
+    console.log("question page changed", answers[question]);
+    if (answers[question]) {
+      setSelected(answers[question]);
+    }
+    // effect
+    // return () => {
+    //   cleanup
+    // }
+  }, [question]);
 
   const handleNext = () => {
     if (parseInt(question) + 1 !== questionSet.length) {
