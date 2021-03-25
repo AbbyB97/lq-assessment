@@ -51,7 +51,7 @@ const ResultComponent = () => {
                 {quizReducer &&
                   quizReducer.questionSet &&
                   ` (${
-                    (quizReducer.score / quizReducer.questionSet.length) * 100
+                    ((quizReducer.score / quizReducer.questionSet.length) * 100).toFixed(1)
                   }%)`}
               </Card.Title>
               <Card.Text>Congrats on completing the test!</Card.Text>
