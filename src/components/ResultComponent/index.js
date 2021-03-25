@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
+import MathJax from "react-mathjax-preview";
 
 //project imports
 import resultImg from "../../dist/images/cardImages/resImgMin.jpg";
@@ -14,6 +15,9 @@ const ResultComponent = () => {
   const dispatch = useDispatch();
 
   const quizReducer = useSelector((state) => state.quizReducer);
+  const questionSet = useSelector((state) => state.quizReducer.questionSet);
+  const score = useSelector((state) => state.quizReducer.score);
+
   const [loading, setLoading] = useState(true);
 
   const imageLoaded = () => {
@@ -27,7 +31,7 @@ const ResultComponent = () => {
     <FadeContainer>
       <StyledHome>
         <h3 className="mb-3 pt-3">Result</h3>
-        <Container style={{ height: "100vh" }} className="card-container pb-3">
+        <Container style={{ height: "" }} className="card-container pb-3">
           <Card>
             <div
               style={{ display: loading ? "block" : "none", height: "150px" }}
@@ -43,20 +47,41 @@ const ResultComponent = () => {
             />
 
             <Card.Body style={{ minHeight: "" }}>
-              <Card.Title>
+              <Card.Title className="text-center">
                 Your score is :
-                {quizReducer &&
-                  quizReducer.questionSet &&
-                  ` ${quizReducer.score}/${quizReducer.questionSet.length}`}
-                {quizReducer &&
-                  quizReducer.questionSet &&
-                  ` (${
-                    ((quizReducer.score / quizReducer.questionSet.length) * 100).toFixed(1)
-                  }%)`}
+                {questionSet && score && ` ${score}/${questionSet.length}`}
+                {questionSet &&
+                  ` (${((score / questionSet.length) * 100).toFixed(1)}%)`}
               </Card.Title>
-              <Card.Text>Congrats on completing the test!</Card.Text>
+              <Card.Text className="text-center">
+                Congrats on completing the test! You can cross check your
+                answers below
+              </Card.Text>
             </Card.Body>
             <Container fluid>
+              {quizReducer &&
+                quizReducer.questionSet.map((question, i) => (
+                  <>
+                    <hr />
+                    <Row>
+                      <Col xs={12}>
+                        {/* <p>{question.question}</p> */}
+                        <MathJax
+                          // className="question"
+                          math={`Q.${i + 1} ${question.question}`}
+                        />
+                      </Col>
+                      <Col xs={12}>
+                        {/* <p>{question.correct}</p> */}
+                        <MathJax
+                          // className="question"
+                          math={`Answer. ${question.correct}`}
+                        />
+                      </Col>
+                    </Row>
+                    {i === questionSet.length - 1 && <hr />}
+                  </>
+                ))}
               <Row>
                 <Col>
                   <Button
