@@ -10,7 +10,16 @@ export const setDifficultyAction = (difficulty) => async (dispatch) => {
 };
 
 export const setQuestions = (difficulty) => async (dispatch) => {
-  let questionSet = [...quizQuestions[difficulty]];
+  let questions = [...quizQuestions[difficulty]];
+  let shuffledQuestions = shuffle(questions);
+  let questionSet = shuffledQuestions.slice(0, 4);
+
+  // for (let i = 0; i < 4; i++) {
+  //   let randomInt = randomNumber(0, questions.length - 1);
+  //   console.log("random int ", randomInt);
+  //   questionSet.push(questions[randomInt]);
+  // }
+
   dispatch({
     type: types.SET_QUESTIONS,
     payload: questionSet,
@@ -55,4 +64,24 @@ function replaceAt(array, index, value) {
   const ret = array.slice(0);
   ret[index] = value;
   return ret;
+}
+
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
