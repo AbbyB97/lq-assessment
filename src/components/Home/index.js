@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Card,
-  ButtonGroup,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
@@ -14,7 +7,6 @@ import styled from "styled-components";
 //project imports
 import quizBanner from "../../dist/images/cardImages/quizBanner.png";
 import FadeContainer from "../../widgets/FadeContainer";
-import { device } from "../../utils/mediaQuery";
 import HomeModal from "../../widgets/HomeModal";
 import { setDifficultyAction } from "../../redux/actions";
 
