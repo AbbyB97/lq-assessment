@@ -30,7 +30,7 @@ const ResultComponent = () => {
         <Container style={{ height: "100vh" }} className="card-container pb-3">
           <Card>
             <div
-              style={{ display: loading ? "block" : "none", height: "224px" }}
+              style={{ display: loading ? "block" : "none", height: "150px" }}
             >
               {/* <p>loading image</p> */}
             </div>
