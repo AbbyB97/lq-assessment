@@ -62,10 +62,14 @@ const ResultComponent = () => {
             <Card.Body style={{ minHeight: "" }}>
               <Card.Title>
                 Your score is :
-                {` ${quizReducer.score}/${quizReducer.questionSet.length}`}
-                {` (${
-                  (quizReducer.score / quizReducer.questionSet.length) * 100
-                }%)`}
+                {quizReducer &&
+                  quizReducer.questionSet &&
+                  ` ${quizReducer.score}/${quizReducer.questionSet.length}`}
+                {quizReducer &&
+                  quizReducer.questionSet &&
+                  ` (${
+                    (quizReducer.score / quizReducer.questionSet.length) * 100
+                  }%)`}
               </Card.Title>
               <Card.Text>Congrats on completing the test!</Card.Text>
             </Card.Body>
