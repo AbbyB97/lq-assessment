@@ -10,6 +10,7 @@ import { setScore } from "../../redux/actions";
 import FadeContainer from "../../widgets/FadeContainer";
 import QuizModal from "../../widgets/QuizModal";
 import { device } from "../../utils/mediaQuery";
+import MathJax from "react-mathjax-preview";
 
 const QuizComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
@@ -70,54 +71,73 @@ const QuizComponent = () => {
                   }
                   className=""
                 >
-                  <Card.Text className="mt-5">
+                  {/* <Card.Text className="mt-5">
                     {`Q. ${parseInt(question) + 1})  ${
                       questionSet[question].question
                     }`}
-                  </Card.Text>
+                  </Card.Text> */}
+                  <MathJax
+                    math={`Q. ${parseInt(question) + 1})  ${
+                      questionSet[question].question
+                    }`}
+                  />
                   <Container fluid className="">
                     <Row>
                       <Form>
-                        <Form.Check
-                          className="my-2"
-                          type="radio"
-                          label={questionSet[question].option_1}
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios1"
-                          onClick={() =>
-                            setSelected(questionSet[question].option_1)
-                          }
-                        />
-                        <Form.Check
-                          className="my-2"
-                          type="radio"
-                          label={questionSet[question].option_2}
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios2"
-                          onClick={() =>
-                            setSelected(questionSet[question].option_2)
-                          }
-                        />
-                        <Form.Check
-                          className="my-2"
-                          type="radio"
-                          label={questionSet[question].option_3}
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios3"
-                          onClick={() =>
-                            setSelected(questionSet[question].option_3)
-                          }
-                        />
-                        <Form.Check
-                          className="my-2"
-                          type="radio"
-                          label={questionSet[question].option_4}
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios4"
-                          onClick={() =>
-                            setSelected(questionSet[question].option_4)
-                          }
-                        />
+                        <Form.Row className="align-items-center">
+                          <Form.Check
+                            className="my-2"
+                            type="radio"
+                            // label={questionSet[question].option_1}
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios1"
+                            onClick={() =>
+                              setSelected(questionSet[question].option_1)
+                            }
+                          />
+                          <MathJax math={questionSet[question].option_1} />
+                        </Form.Row>
+
+                        <Form.Row className="align-items-center">
+                          <Form.Check
+                            className="my-2"
+                            type="radio"
+                            // label={questionSet[question].option_2}
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios2"
+                            onClick={() =>
+                              setSelected(questionSet[question].option_2)
+                            }
+                          />
+                          <MathJax math={questionSet[question].option_2} />
+                        </Form.Row>
+                        <Form.Row className="align-items-center">
+                          <Form.Check
+                            className="my-2"
+                            type="radio"
+                            // label={questionSet[question].option_3}
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                            onClick={() =>
+                              setSelected(questionSet[question].option_3)
+                            }
+                          />
+                          <MathJax math={questionSet[question].option_3} />
+
+                        </Form.Row>
+                        <Form.Row className="align-items-center">
+                          <Form.Check
+                            className="my-2"
+                            type="radio"
+                            // label={questionSet[question].option_4}
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios4"
+                            onClick={() =>
+                              setSelected(questionSet[question].option_4)
+                            }
+                          />
+                          <MathJax math={questionSet[question].option_4} />
+                        </Form.Row>
                       </Form>
                     </Row>
                   </Container>
