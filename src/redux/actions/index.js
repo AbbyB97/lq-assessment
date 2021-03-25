@@ -35,3 +35,10 @@ export const setScore = (isCorrect) => async (dispatch, getState) => {
     payload: new_score,
   });
 };
+
+export const resetTestReducer = () => async (dispatch) => {
+  console.log("resetting test");
+  dispatch({
+    type: types.RESET_TEST,
+  });
+};

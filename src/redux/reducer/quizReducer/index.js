@@ -22,6 +22,10 @@ export default (state = initialState, action) => {
         ...state,
         score: action.payload,
       };
+    case types.RESET_TEST:
+      return {
+        ...initialState,
+      };
     default:
       return state;
   }

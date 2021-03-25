@@ -15,10 +15,15 @@ import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import HomeModal from "../../widgets/HomeModal";
-import { simpleAction, setDifficultyAction } from "../../redux/actions";
+import {
+  simpleAction,
+  setDifficultyAction,
+  resetTestReducer,
+} from "../../redux/actions";
 
 const ResultComponent = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const quizReducer = useSelector((state) => state.quizReducer);
   const [loading, setLoading] = useState(true);
@@ -64,7 +69,10 @@ const ResultComponent = () => {
                   <Button
                     className="w-100 mb-2"
                     variant="primary"
-                    onClick={() => history.push("/")}
+                    onClick={() => {
+                      dispatch(resetTestReducer());
+                      history.push("/");
+                    }}
                   >
                     Take test again <i className="fas fa-angle-right"></i>
                   </Button>
