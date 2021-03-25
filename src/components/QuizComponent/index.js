@@ -58,12 +58,10 @@ const QuizComponent = () => {
               <Card.Body style={{ minHeight: "65vh" }}>
                 <h5 className="text-center">Select your answer and submit</h5>
                 <div
-                  style={
-                    {
-                      overflowX:"scroll",
-                      paddingLeft:"5px"
-                    }
-                  }
+                  style={{
+                    overflowX: "auto",
+                    paddingLeft: "5px",
+                  }}
                   className=""
                 >
                   {/* <Card.Text className="mt-5">
