@@ -60,7 +60,13 @@ const ResultComponent = () => {
             /> */}
 
             <Card.Body style={{ minHeight: "" }}>
-              <Card.Title>Your score is : {quizReducer.score} </Card.Title>
+              <Card.Title>
+                Your score is :
+                {` ${quizReducer.score}/${quizReducer.questionSet.length}`}
+                {` (${
+                  (quizReducer.score / quizReducer.questionSet.length) * 100
+                }%)`}
+              </Card.Title>
               <Card.Text>Congrats on completing the test!</Card.Text>
             </Card.Body>
             <Container fluid>
