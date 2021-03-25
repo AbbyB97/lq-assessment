@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Simple Quiz App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The live version is hosted  [here](https://lq-assignment.netlify.app).
 
 ## Available Scripts
 
