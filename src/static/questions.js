@@ -288,17 +288,17 @@ const quizQuestions = {
       marks: 1,
       difficulty: "easy",
     },
-    {
-      question:
-        "Find the mode for the data set, which shows the heights( in inches ) of 10 students in a class: 60, 65, 63, 62, 65, 70, 62, 68, 60, 65",
-      option_1: "62",
-      option_2: "65",
-      option_3: "70",
-      option_4: "60",
-      correct: "65",
-      marks: 1,
-      difficulty: "easy",
-    },
+    // {
+    //   question:
+    //     "Find the mode for the data set, which shows the heights( in inches ) of 10 students in a class: 60, 65, 63, 62, 65, 70, 62, 68, 60, 65",
+    //   option_1: "62",
+    //   option_2: "65",
+    //   option_3: "70",
+    //   option_4: "60",
+    //   correct: "65",
+    //   marks: 1,
+    //   difficulty: "easy",
+    // },
   ],
   medium: [
     {

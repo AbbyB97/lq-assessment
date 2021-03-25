@@ -62,7 +62,7 @@ const ResultComponent = () => {
             <Container fluid>
               {questionSet &&
                 questionSet.map((question, i) => (
-                  <>
+                  <React.Fragment key={i}>
                     <hr />
                     <Row>
                       <Col xs={12}>
@@ -76,6 +76,7 @@ const ResultComponent = () => {
                         {/* <p>{question.correct}</p> */}
                         <MathJax
                           // className="question"
+                          style={{color:answers[i]===question.correct?"green":"red"}}
                           math={`Your Answer : ${
                             answers[i] !== "" ? answers[i] : "NA"
                           }`}
@@ -97,7 +98,7 @@ const ResultComponent = () => {
                       </Col>
                     </Row>
                     {i === questionSet.length - 1 && <hr />}
-                  </>
+                  </React.Fragment>
                 ))}
               <Row>
                 <Col>

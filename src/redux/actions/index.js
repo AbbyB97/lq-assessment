@@ -10,20 +10,33 @@ export const setDifficultyAction = (difficulty) => async (dispatch) => {
 };
 
 export const setQuestions = (difficulty) => async (dispatch) => {
-  let questions = [...quizQuestions[difficulty]];
-  let shuffledQuestions = shuffle(questions);
-  let questionSet = shuffledQuestions.slice(0, 4);
+  if (difficulty === "any") {
+    let questions = [
+      ...quizQuestions["easy"],
+      ...quizQuestions["medium"],
+      ...quizQuestions["hard"],
+    ];
+    let shuffledQuestions = shuffle(questions);
+    let questionSet = shuffledQuestions.slice(0, 4);
+    dispatch({
+      type: types.SET_QUESTIONS,
+      payload: questionSet,
+    });
+  } else {
+    let questions = [...quizQuestions[difficulty]];
+    let shuffledQuestions = shuffle(questions);
+    let questionSet = shuffledQuestions.slice(0, 4);
+    dispatch({
+      type: types.SET_QUESTIONS,
+      payload: questionSet,
+    });
+  }
 
   // for (let i = 0; i < 4; i++) {
   //   let randomInt = randomNumber(0, questions.length - 1);
   //   console.log("random int ", randomInt);
   //   questionSet.push(questions[randomInt]);
   // }
-
-  dispatch({
-    type: types.SET_QUESTIONS,
-    payload: questionSet,
-  });
 };
 
 export const setScore = () => async (dispatch, getState) => {

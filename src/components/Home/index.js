@@ -56,7 +56,7 @@ const Home = () => {
                   The Questions will be asked as per this selection
                 </Card.Text>
                 <Row>
-                  <Col md={4} xs={12}>
+                  <Col md={3} xs={12}>
                     <Button
                       className=" w-100 my-2"
                       onClick={() => setDifficulty("easy")}
@@ -66,7 +66,7 @@ const Home = () => {
                       Easy
                     </Button>
                   </Col>
-                  <Col md={4} xs={12}>
+                  <Col md={3} xs={12}>
                     <Button
                       className="w-100 my-2"
                       onClick={() => setDifficulty("medium")}
@@ -76,7 +76,7 @@ const Home = () => {
                       Medium
                     </Button>
                   </Col>
-                  <Col md={4} xs={12}>
+                  <Col md={3} xs={12}>
                     <Button
                       className="w-100 my-2"
                       onClick={() => setDifficulty("hard")}
@@ -84,6 +84,16 @@ const Home = () => {
                       active={difficulty === "hard"}
                     >
                       Hard
+                    </Button>
+                  </Col>
+                  <Col md={3} xs={12}>
+                    <Button
+                      className="w-100 my-2"
+                      onClick={() => setDifficulty("any")}
+                      variant="secondary"
+                      active={difficulty === "any"}
+                    >
+                      Any
                     </Button>
                   </Col>
                 </Row>
