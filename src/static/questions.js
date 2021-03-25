@@ -225,6 +225,7 @@ const quizQuestions = {
       option_4: "all of these",
       correct: "trinomial",
       marks: 1,
+      difficulty: "easy",
     },
     {
       question:
@@ -235,6 +236,7 @@ const quizQuestions = {
       option_4: "5",
       correct: "3",
       marks: 1,
+      difficulty: "easy",
     },
     {
       question: "The terms of expression are: $$4.x^2 - 3.x.y$$ ",
@@ -244,6 +246,7 @@ const quizQuestions = {
       option_4: "$$x^2 and x.y$$",
       correct: "$$4.x^2 and -3.x.y$$",
       marks: 1,
+      difficulty: "easy",
     },
     {
       question: "The subtraction of 5 times of y from x is",
@@ -253,6 +256,7 @@ const quizQuestions = {
       option_4: "$$5y - x$$",
       correct: "$$x - 5y$$",
       marks: 1,
+      difficulty: "easy",
     },
     {
       question: "The value of $$3.x^2 - 5.x + 3$$ when x = 1 is",
@@ -262,6 +266,7 @@ const quizQuestions = {
       option_4: "11",
       correct: "1",
       marks: 1,
+      difficulty: "easy",
     },
     {
       question: "$$(5/6)^0 =$$",
@@ -271,6 +276,7 @@ const quizQuestions = {
       option_4: "None of these",
       correct: "1",
       marks: 1,
+      difficulty: "easy",
     },
     {
       question: "$$(-1)^50 × (-1)^51 × (1)^100 × (-1)^101 =$$",
@@ -280,6 +286,7 @@ const quizQuestions = {
       option_4: "2",
       correct: "1",
       marks: 1,
+      difficulty: "easy",
     },
     {
       question:
@@ -290,6 +297,7 @@ const quizQuestions = {
       option_4: "60",
       correct: "65",
       marks: 1,
+      difficulty: "easy",
     },
   ],
   medium: [
@@ -301,6 +309,7 @@ const quizQuestions = {
       option_4: "$$-5.x.y.z^2$$",
       correct: "$$-5.x.x.y.y.z$$",
       marks: 1,
+      difficulty: "medium",
     },
     {
       question: "Coefficient of x in $$-9.x.y^2.z$$ is",
@@ -310,6 +319,7 @@ const quizQuestions = {
       option_4: "$$-9.y^2.z$$",
       correct: "$$-9.y^2.z$$",
       marks: 1,
+      difficulty: "medium",
     },
     {
       question:
@@ -320,6 +330,7 @@ const quizQuestions = {
       option_4: "8x",
       correct: "4x",
       marks: 1,
+      difficulty: "medium",
     },
     {
       question: "$$(2^2)^n = (2^3)^4$$ , then n =",
@@ -329,6 +340,7 @@ const quizQuestions = {
       option_4: "6",
       correct: "6",
       marks: 1,
+      difficulty: "medium",
     },
     {
       question: "$$(-7/5)^-1 =$$",
@@ -338,6 +350,7 @@ const quizQuestions = {
       option_4: "None of these",
       correct: "-5/7",
       marks: 1,
+      difficulty: "medium",
     },
     {
       question: "$$81^5 ÷ (3^2)^5 =$$",
@@ -347,6 +360,7 @@ const quizQuestions = {
       option_4: "None of these",
       correct: "$$3^10$$",
       marks: 1,
+      difficulty: "medium",
     },
     {
       question: "$$(1/4)^-3 - (1/3)^-3 =$$",
@@ -356,6 +370,7 @@ const quizQuestions = {
       option_4: "-1/37",
       correct: "37",
       marks: 1,
+      difficulty: "medium",
     },
   ],
   hard: [
@@ -368,6 +383,7 @@ const quizQuestions = {
       option_4: "n - 3",
       correct: "n - 3",
       marks: 1,
+      difficulty: "hard",
     },
     {
       question: "$$123.x^2.y - 138.x^2.y$$ is a like term of",
@@ -377,6 +393,7 @@ const quizQuestions = {
       option_4: "$$10.x^2.y$$",
       correct: "$$10.x^2.y$$",
       marks: 1,
+      difficulty: "hard",
     },
     {
       question: "$$(2^20 ÷ 2^15) × 2^3 =$$",
@@ -386,6 +403,7 @@ const quizQuestions = {
       option_4: "None of these",
       correct: "$$2^8$$",
       marks: 1,
+      difficulty: "hard",
     },
     {
       question: "$$(8^2 × 8^4) - 2^18 =$$",
@@ -395,6 +413,7 @@ const quizQuestions = {
       option_4: "None of these",
       correct: "0",
       marks: 1,
+      difficulty: "hard",
     },
     {
       question: "$$(3^7) ÷ (81 × 3^3) =$$",
@@ -404,6 +423,7 @@ const quizQuestions = {
       option_4: "None of these",
       correct: "$$3^0$$",
       marks: 1,
+      difficulty: "hard",
     },
     {
       question: "$$(10 × 5^(n+1)+ 25 × 5^n) ÷ (3 × 5^(n+2)+ 10 × 5^(n+1))$$",
@@ -413,6 +433,7 @@ const quizQuestions = {
       option_4: "5",
       correct: "3/5",
       marks: 1,
+      difficulty: "hard",
     },
     {
       question:
@@ -423,6 +444,7 @@ const quizQuestions = {
       option_4: "60",
       correct: "65",
       marks: 1,
+      difficulty: "hard",
     },
   ],
 };

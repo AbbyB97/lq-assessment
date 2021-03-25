@@ -17,6 +17,7 @@ const ResultComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
   const questionSet = useSelector((state) => state.quizReducer.questionSet);
   const score = useSelector((state) => state.quizReducer.score);
+  const answers = useSelector((state) => state.quizReducer.answers);
 
   const [loading, setLoading] = useState(true);
 
@@ -59,8 +60,8 @@ const ResultComponent = () => {
               </Card.Text>
             </Card.Body>
             <Container fluid>
-              {quizReducer &&
-                quizReducer.questionSet.map((question, i) => (
+              {questionSet &&
+                questionSet.map((question, i) => (
                   <>
                     <hr />
                     <Row>
@@ -75,8 +76,24 @@ const ResultComponent = () => {
                         {/* <p>{question.correct}</p> */}
                         <MathJax
                           // className="question"
-                          math={`Answer. ${question.correct}`}
+                          math={`Your Answer : ${
+                            answers[i] !== "" ? answers[i] : "NA"
+                          }`}
                         />
+                      </Col>
+                      <Col xs={12}>
+                        {/* <p>{question.correct}</p> */}
+                        <MathJax
+                          // className="question"
+                          math={`Correct Answer : ${question.correct}`}
+                        />
+                      </Col>
+                      <Col xs={12}>
+                        {/* <p>{question.question}</p> */}
+
+                        <p className="text-capitalize">
+                          Difficulty : {question.difficulty}
+                        </p>
                       </Col>
                     </Row>
                     {i === questionSet.length - 1 && <hr />}

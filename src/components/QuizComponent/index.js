@@ -20,7 +20,7 @@ const QuizComponent = () => {
   const dispatch = useDispatch();
 
   // const [visible, setVisible] = useState(true);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState("");
   const history = useHistory();
   const { question } = useParams();
 
@@ -55,6 +55,7 @@ const QuizComponent = () => {
       history.push(`/quiz/${parseInt(question) + 1}`);
       setSelected("");
     } else {
+      dispatch(setAnswer(question, selected));
       history.push(`/result`);
     }
   };
