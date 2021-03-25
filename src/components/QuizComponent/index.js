@@ -54,21 +54,23 @@ const QuizComponent = () => {
       <FadeContainer>
         <StyledQuizComp>
           <h3 className="mb-3 pt-3">LearnQ Assignment</h3>
-          <Container className="card-container pb-3">
+          <Container className="card-container ">
             <Card>
-              <Card.Body style={{ minHeight: "75vh" }}>
-                <h6>Select your answer and submit</h6>
+              <Card.Body style={{ minHeight: "65vh" }}>
+                <h6 className="text-center">Select your answer and submit</h6>
                 <div
-                  style={{
-                    minHeight: "70vh",
-                    display: "flex",
-                    flexDirection: "column",
-                    // alignItems: "center",
-                    justifyContent: "center",
-                  }}
+                  style={
+                    {
+                      // minHeight: "70vh",
+                      // display: "flex",
+                      // flexDirection: "column",
+                      // alignItems: "center",
+                      // justifyContent: "center",
+                    }
+                  }
                   className=""
                 >
-                  <Card.Text>
+                  <Card.Text className="mt-5">
                     {`Q. ${parseInt(question) + 1})  ${
                       questionSet[question].question
                     }`}
@@ -160,7 +162,7 @@ const StyledQuizComp = styled.div`
     margin-bottom: 10px;
   }
   .form-check-input {
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .card-text {

@@ -29,7 +29,7 @@ const StyledDiv = styled.div`
   /* height: 100%; */
   background-color: #2196f3;
   padding: 0rem;
-
+  padding-bottom:5rem;
   .card-container {
     @media ${device.mobileS} {
       width: 92vw;
