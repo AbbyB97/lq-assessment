@@ -1,11 +1,6 @@
 import * as types from "../types";
 import quizQuestions from "../../static/questions";
 
-export const simpleAction = () => ({
-  type: types.SIMPLE_ACTION,
-  payload: "result_of_simple_action",
-});
-
 export const setDifficultyAction = (difficulty) => async (dispatch) => {
   console.log("diff act", difficulty);
   dispatch({

@@ -14,7 +14,7 @@ import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
 import { useDispatch } from "react-redux";
 import HomeModal from "../../widgets/HomeModal";
-import { simpleAction, setDifficultyAction } from "../../redux/actions";
+import { setDifficultyAction } from "../../redux/actions";
 
 const Home = () => {
   const history = useHistory();
@@ -28,7 +28,6 @@ const Home = () => {
       history.push("/quiz/0");
     } else {
       setVisible(true);
-      dispatch(simpleAction());
     }
   };
 
