@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 //library imports
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { setScore } from "../../redux/actions";
+import { setAnswer } from "../../redux/actions";
 import FadeContainer from "../../widgets/FadeContainer";
 import QuizModal from "../../widgets/QuizModal";
 import { device } from "../../utils/mediaQuery";
@@ -18,7 +18,7 @@ const QuizComponent = () => {
 
   const dispatch = useDispatch();
 
-  const [visible, setVisible] = useState(true);
+  // const [visible, setVisible] = useState(true);
   const [selected, setSelected] = useState(null);
   const history = useHistory();
   const { question } = useParams();
@@ -27,22 +27,21 @@ const QuizComponent = () => {
     history.push("/");
   }
 
-  useEffect(() => {
-    return () => {
-      if (history.action === "POP") {
-        // handle any state changes necessary to set the screen display back one page.
-        history.push(`/quiz/${question}`);
-        setVisible(true);
-      }
-    };
-  }, [question]);
+  // useEffect(() => {
+  //   return () => {
+  //     if (history.action === "POP") {
+  //       // handle any state changes necessary to set the screen display back one page.
+  //       history.push(`/quiz/${question}`);
+  //       setVisible(true);
+  //     }
+  //   };
+  // }, [question]);
 
   const handleNext = () => {
     if (parseInt(question) + 1 !== questionSet.length) {
-      let isCorrect = questionSet[question].correct === selected;
-      dispatch(setScore(isCorrect));
-
+      dispatch(setAnswer(question, selected));
       history.push(`/quiz/${parseInt(question) + 1}`);
+      setSelected("");
     } else {
       history.push(`/result`);
     }
@@ -84,7 +83,9 @@ const QuizComponent = () => {
                             type="radio"
                             // label={questionSet[question].option_1}
                             name="formHorizontalRadios"
-                            checked={selected===questionSet[question].option_1}
+                            checked={
+                              selected === questionSet[question].option_1
+                            }
                             id="formHorizontalRadios1"
                             onChange={() =>
                               setSelected(questionSet[question].option_1)
@@ -99,7 +100,9 @@ const QuizComponent = () => {
                             type="radio"
                             // label={questionSet[question].option_2}
                             name="formHorizontalRadios"
-                            checked={selected===questionSet[question].option_2}
+                            checked={
+                              selected === questionSet[question].option_2
+                            }
                             id="formHorizontalRadios2"
                             onChange={() =>
                               setSelected(questionSet[question].option_2)
@@ -113,7 +116,9 @@ const QuizComponent = () => {
                             type="radio"
                             // label={questionSet[question].option_3}
                             name="formHorizontalRadios"
-                            checked={selected===questionSet[question].option_3}
+                            checked={
+                              selected === questionSet[question].option_3
+                            }
                             id="formHorizontalRadios3"
                             onChange={() =>
                               setSelected(questionSet[question].option_3)
@@ -125,7 +130,9 @@ const QuizComponent = () => {
                           <Form.Check
                             className="my-2"
                             type="radio"
-                            checked={selected===questionSet[question].option_4}
+                            checked={
+                              selected === questionSet[question].option_4
+                            }
                             // label={questionSet[question].option_4}
                             name="formHorizontalRadios"
                             id="formHorizontalRadios4"
@@ -154,11 +161,11 @@ const QuizComponent = () => {
             </Card>
           </Container>
         </StyledQuizComp>
-        <QuizModal
+        {/* <QuizModal
           animation={"slideDown"}
           visible={visible}
           setVisible={setVisible}
-        />
+        /> */}
       </FadeContainer>
     )
   );
