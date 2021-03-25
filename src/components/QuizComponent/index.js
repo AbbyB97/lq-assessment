@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { setScore } from "../../redux/actions";
 import FadeContainer from "../../widgets/FadeContainer";
 import QuizModal from "../../widgets/QuizModal";
-import device from "../../utils/mediaQuery";
+import { device } from "../../utils/mediaQuery";
 
 const QuizComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
@@ -57,7 +57,7 @@ const QuizComponent = () => {
           <Container className="card-container ">
             <Card>
               <Card.Body style={{ minHeight: "65vh" }}>
-                <h6 className="text-center">Select your answer and submit</h6>
+                <h5 className="text-center">Select your answer and submit</h5>
                 <div
                   style={
                     {
@@ -165,6 +165,13 @@ const StyledQuizComp = styled.div`
     margin-top: 6px;
   }
 
-  .card-text {
+  h5 {
+    @media ${device.mobileS} {
+      font-size: 1rem;
+    }
+
+    @media ${device.tablet} {
+      font-size: 1.5rem;
+    }
   }
 `;
