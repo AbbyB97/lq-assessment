@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import {
   Container,
@@ -14,6 +14,7 @@ import styled from "styled-components";
 import { setScore } from "../../redux/actions";
 import FadeContainer from "../../widgets/FadeContainer";
 import { useDispatch } from "react-redux";
+import QuizModal from "../../widgets/QuizModal";
 
 const QuizComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
@@ -21,6 +22,7 @@ const QuizComponent = () => {
 
   const dispatch = useDispatch();
 
+  const [visible, setVisible] = useState(true);
   const [selected, setSelected] = useState(null);
   const history = useHistory();
   const { question } = useParams();
@@ -28,6 +30,17 @@ const QuizComponent = () => {
   if (quizReducer && quizReducer.difficulty == "") {
     history.push("/");
   }
+
+  useEffect(() => {
+    return () => {
+      if (history.action === "POP") {
+        // handle any state changes necessary to set the screen display back one page.
+        console.log("backbutton press");
+        history.push(`/quiz/${question}`);
+        setVisible(true);
+      }
+    };
+  }, [question]);
 
   const handleNext = () => {
     if (parseInt(question) + 1 !== questionSet.length) {
@@ -129,6 +142,11 @@ const QuizComponent = () => {
             </Card>
           </Container>
         </StyledQuizComp>
+        <QuizModal
+          animation={"slideDown"}
+          visible={visible}
+          setVisible={setVisible}
+        />
       </FadeContainer>
     )
   );
