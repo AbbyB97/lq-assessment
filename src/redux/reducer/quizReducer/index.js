@@ -3,6 +3,7 @@ const initialState = {
   difficulty: "",
   questionSet: null,
   answers: [],
+  score: 0,
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -15,6 +16,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         questionSet: action.payload,
+      };
+    case types.SET_SCORE:
+      return {
+        ...state,
+        score: action.payload,
       };
     default:
       return state;

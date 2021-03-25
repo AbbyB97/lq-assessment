@@ -23,3 +23,15 @@ export const setQuestions = (difficulty) => async (dispatch) => {
     payload: questionSet,
   });
 };
+
+export const setScore = (isCorrect) => async (dispatch, getState) => {
+  console.log("isCOrrect act", isCorrect);
+  let score = getState().quizReducer.score;
+  console.log("score", score);
+  let new_score = isCorrect ? score + 1 : score;
+
+  dispatch({
+    type: types.SET_SCORE,
+    payload: new_score,
+  });
+};

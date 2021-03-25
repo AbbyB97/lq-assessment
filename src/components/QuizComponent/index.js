@@ -11,11 +11,15 @@ import {
 } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { setScore } from "../../redux/actions";
 import FadeContainer from "../../widgets/FadeContainer";
+import { useDispatch } from "react-redux";
 
 const QuizComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
   const questionSet = useSelector((state) => state.quizReducer.questionSet);
+
+  const dispatch = useDispatch();
 
   const [selected, setSelected] = useState(null);
   const history = useHistory();
@@ -27,6 +31,10 @@ const QuizComponent = () => {
 
   const handleNext = () => {
     if (parseInt(question) + 1 !== questionSet.length) {
+      let isCorrect = questionSet[question].correct === selected;
+      console.log("answer -- ", isCorrect);
+      dispatch(setScore(isCorrect));
+
       history.push(`/quiz/${parseInt(question) + 1}`);
     } else {
       history.push(`/result`);
@@ -41,7 +49,9 @@ const QuizComponent = () => {
           <Container className="card-container pb-3">
             <Card>
               <Card.Body style={{ minHeight: "75vh" }}>
-                <Card.Title>Select your answer and click next </Card.Title>
+                <Card.Title style={{ fontSize: "1.3rem" }}>
+                  Select your answer and click next
+                </Card.Title>
                 <div
                   style={{
                     minHeight: "70vh",
@@ -53,7 +63,9 @@ const QuizComponent = () => {
                   className=""
                 >
                   <Card.Text style={{ fontSize: "1.4rem" }}>
-                    {`Q. ${parseInt(question)+1})  ${questionSet[question].question}`}
+                    {`Q. ${parseInt(question) + 1})  ${
+                      questionSet[question].question
+                    }`}
                   </Card.Text>
                   <Container fluid className="" style={{ fontSize: "1.2rem" }}>
                     <Row>
