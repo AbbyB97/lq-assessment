@@ -84,8 +84,9 @@ const QuizComponent = () => {
                             type="radio"
                             // label={questionSet[question].option_1}
                             name="formHorizontalRadios"
+                            checked={selected===questionSet[question].option_1}
                             id="formHorizontalRadios1"
-                            onClick={() =>
+                            onChange={() =>
                               setSelected(questionSet[question].option_1)
                             }
                           />
@@ -98,8 +99,9 @@ const QuizComponent = () => {
                             type="radio"
                             // label={questionSet[question].option_2}
                             name="formHorizontalRadios"
+                            checked={selected===questionSet[question].option_2}
                             id="formHorizontalRadios2"
-                            onClick={() =>
+                            onChange={() =>
                               setSelected(questionSet[question].option_2)
                             }
                           />
@@ -111,8 +113,9 @@ const QuizComponent = () => {
                             type="radio"
                             // label={questionSet[question].option_3}
                             name="formHorizontalRadios"
+                            checked={selected===questionSet[question].option_3}
                             id="formHorizontalRadios3"
-                            onClick={() =>
+                            onChange={() =>
                               setSelected(questionSet[question].option_3)
                             }
                           />
@@ -122,10 +125,11 @@ const QuizComponent = () => {
                           <Form.Check
                             className="my-2"
                             type="radio"
+                            checked={selected===questionSet[question].option_4}
                             // label={questionSet[question].option_4}
                             name="formHorizontalRadios"
                             id="formHorizontalRadios4"
-                            onClick={() =>
+                            onChange={() =>
                               setSelected(questionSet[question].option_4)
                             }
                           />
