@@ -161,13 +161,32 @@ const QuizComponent = () => {
               </Card.Body>
               <Container>
                 <Row className="justify-content-center">
-                  <Button
-                    className="w-75 my-2"
-                    onClick={handleNext}
-                    variant="primary"
-                  >
-                    Submit
-                  </Button>
+                  {parseInt(question) !== questionSet.length - 1 && (
+                    <Col>
+                      <Row className="justify-content-center">
+                        <Button
+                          className="w-75 my-2"
+                          onClick={() => history.goBack()}
+                          variant="primary"
+                        >
+                          back
+                        </Button>
+                      </Row>
+                    </Col>
+                  )}
+                  <Col>
+                    <Row className="justify-content-center">
+                      <Button
+                        className="w-75 my-2"
+                        onClick={handleNext}
+                        variant="primary"
+                      >
+                        {parseInt(question) !== questionSet.length - 1
+                          ? `next`
+                          : `submit`}
+                      </Button>
+                    </Row>
+                  </Col>
                 </Row>
               </Container>
             </Card>
