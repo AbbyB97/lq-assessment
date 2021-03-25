@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { setScore } from "../../redux/actions";
 import FadeContainer from "../../widgets/FadeContainer";
 import QuizModal from "../../widgets/QuizModal";
+import device from "../../utils/mediaQuery";
 
 const QuizComponent = () => {
   const quizReducer = useSelector((state) => state.quizReducer);
@@ -56,9 +57,7 @@ const QuizComponent = () => {
           <Container className="card-container pb-3">
             <Card>
               <Card.Body style={{ minHeight: "75vh" }}>
-                <Card.Title style={{ fontSize: "1.3rem" }}>
-                  Select your answer and click submit
-                </Card.Title>
+                <h6>Select your answer and submit</h6>
                 <div
                   style={{
                     minHeight: "70vh",
@@ -69,12 +68,12 @@ const QuizComponent = () => {
                   }}
                   className=""
                 >
-                  <Card.Text style={{ fontSize: "1.4rem" }}>
+                  <Card.Text>
                     {`Q. ${parseInt(question) + 1})  ${
                       questionSet[question].question
                     }`}
                   </Card.Text>
-                  <Container fluid className="" style={{ fontSize: "1.2rem" }}>
+                  <Container fluid className="">
                     <Row>
                       <Form>
                         <Form.Check
@@ -162,5 +161,8 @@ const StyledQuizComp = styled.div`
   }
   .form-check-input {
     margin-top: 8px;
+  }
+
+  .card-text {
   }
 `;
