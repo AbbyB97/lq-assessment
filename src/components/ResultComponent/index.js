@@ -26,7 +26,7 @@ const ResultComponent = () => {
   return (
     <FadeContainer>
       <StyledHome>
-        <h3 className="mb-3">Result</h3>
+        <h3 className="mb-3 pt-3">Result</h3>
         <Container style={{ height: "100vh" }} className="card-container pb-3">
           <Card>
             <div

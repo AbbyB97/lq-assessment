@@ -52,7 +52,7 @@ const QuizComponent = () => {
     questionSet && (
       <FadeContainer>
         <StyledQuizComp>
-          <h3 className="mb-3">LearnQ Assignment</h3>
+          <h3 className="mb-3 pt-3">LearnQ Assignment</h3>
           <Container className="card-container pb-3">
             <Card>
               <Card.Body style={{ minHeight: "75vh" }}>
