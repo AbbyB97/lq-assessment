@@ -25,16 +25,29 @@ const Home = () => {
     }
   };
 
+  const [loading, setLoading] = useState(true);
+
+  const imageLoaded = () => {
+    setLoading(false);
+  };
+
   return (
     <FadeContainer>
       <StyledHome style={{ paddingBottom: "4rem" }}>
         <h3 className="mb-3 pt-3">LearnQ Assignment</h3>
         <Container style={{ height: "100vh" }} className="card-container pb-5 ">
           <Card>
+            {loading && (
+              <div
+                style={{ display: loading ? "block" : "none", height: "275px" }}
+              />
+            )}
+            {/* <p>loading image</p> */}
             <Card.Img
               className="mx-auto mt-3 w-75"
               variant="top"
               src={quizBanner}
+              onLoad={imageLoaded}
             />
             <Card.Body>
               <Container fluid>

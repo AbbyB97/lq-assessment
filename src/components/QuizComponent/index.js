@@ -77,6 +77,7 @@ const QuizComponent = () => {
                     }`}
                   </Card.Text> */}
                   <MathJax
+                    className="question"
                     math={`Q. ${parseInt(question) + 1})  ${
                       questionSet[question].question
                     }`}
@@ -123,7 +124,6 @@ const QuizComponent = () => {
                             }
                           />
                           <MathJax math={questionSet[question].option_3} />
-
                         </Form.Row>
                         <Form.Row className="align-items-center">
                           <Form.Check
@@ -175,7 +175,18 @@ const StyledQuizComp = styled.div`
     text-align: center;
     padding: 0;
   }
-
+  .question {
+    /* color: red; */
+    @media ${device.mobileS} {
+      font-size: 0.75rem;
+    }
+    @media ${device.mobileM} {
+      font-size: 0.9rem;
+    }
+    @media ${device.tablet} {
+      font-size: 1.2rem;
+    }
+  }
   .form-check-label {
     /* color: red; */
     text-transform: capitalize;

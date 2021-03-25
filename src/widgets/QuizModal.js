@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Rodal from "rodal";
 import { Container, Row, Button } from "react-bootstrap";
 import examImg from "../dist/images/cardImages/examImg.jpg";
@@ -6,6 +6,11 @@ import useWindowSize from "../utils/useWindowSize";
 
 const QuizModal = ({ animation, visible, setVisible }) => {
   const windowSize = useWindowSize();
+  const [loading, setLoading] = useState(true);
+
+  const imageLoaded = () => {
+    setLoading(false);
+  };
   return (
     <Rodal
       animation={animation}
@@ -21,11 +26,15 @@ const QuizModal = ({ animation, visible, setVisible }) => {
           </h6>
         </Row>
         <Row className="justify-content-center">
+          <div
+            style={{ display: loading ? "block" : "none", height: "100px" }}
+          />
           <img
             className="w-50 h-50"
             style={{ borderRadius: "1rem" }}
             src={examImg}
             alt="robo"
+            onLoad={imageLoaded}
           />
         </Row>
         <Row className="justify-content-center">
