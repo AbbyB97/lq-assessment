@@ -57,7 +57,7 @@ const QuizComponent = () => {
             <Card>
               <Card.Body style={{ minHeight: "75vh" }}>
                 <Card.Title style={{ fontSize: "1.3rem" }}>
-                  Select your answer and click next
+                  Select your answer and click submit
                 </Card.Title>
                 <div
                   style={{
@@ -129,7 +129,7 @@ const QuizComponent = () => {
                     onClick={handleNext}
                     variant="primary"
                   >
-                    Next <i className="fas fa-angle-right"></i>
+                    Submit
                   </Button>
                 </Row>
               </Container>

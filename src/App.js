@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { HashRouter, Route, Link, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import styled from "styled-components";
 import ResultComponent from "./components/ResultComponent";
@@ -12,13 +12,13 @@ import resultImg from "./dist/images/cardImages/resImg.jpg";
 function App() {
   return (
     <StyledDiv>
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/quiz/:question" component={QuizComponent} />
           <Route exact path="/result" component={ResultComponent} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </StyledDiv>
   );
 }
