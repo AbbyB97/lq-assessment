@@ -9,11 +9,13 @@ import {
   ButtonGroup,
   Form,
 } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+
+//library imports
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { setScore } from "../../redux/actions";
 import FadeContainer from "../../widgets/FadeContainer";
-import { useDispatch } from "react-redux";
 import QuizModal from "../../widgets/QuizModal";
 
 const QuizComponent = () => {

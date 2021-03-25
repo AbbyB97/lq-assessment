@@ -7,12 +7,14 @@ import {
   Card,
   ButtonGroup,
 } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+
+//project imports
 import quizBanner from "../../dist/images/cardImages/quizBanner.png";
 import FadeContainer from "../../widgets/FadeContainer";
 import { device } from "../../utils/mediaQuery";
-import { useDispatch } from "react-redux";
 import HomeModal from "../../widgets/HomeModal";
 import { setDifficultyAction } from "../../redux/actions";
 

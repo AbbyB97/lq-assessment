@@ -1,25 +1,13 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Card,
-  ButtonGroup,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import resultImg from "../../dist/images/cardImages/resImgMin.jpg";
-import loader from "../../dist/loader/loader.gif";
-import FadeContainer from "../../widgets/FadeContainer";
-import { device } from "../../utils/mediaQuery";
 import { useDispatch, useSelector } from "react-redux";
-import HomeModal from "../../widgets/HomeModal";
-import {
-  simpleAction,
-  setDifficultyAction,
-  resetTestReducer,
-} from "../../redux/actions";
+
+//project imports
+import resultImg from "../../dist/images/cardImages/resImgMin.jpg";
+import FadeContainer from "../../widgets/FadeContainer";
+import { resetTestReducer } from "../../redux/actions";
 
 const ResultComponent = () => {
   const history = useHistory();
@@ -53,11 +41,6 @@ const ResultComponent = () => {
               src={resultImg}
               onLoad={imageLoaded}
             />
-            {/* <img
-              style={{ height: "60px", width: "60px" }}
-              src={loader}
-              alt="loader"
-            /> */}
 
             <Card.Body style={{ minHeight: "" }}>
               <Card.Title>

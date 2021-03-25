@@ -1,7 +1,6 @@
 import React from "react";
 import Rodal from "rodal";
 import { Container, Row, Button } from "react-bootstrap";
-// import confusedRobo from "../dist/images/cardImages/confusedRobo.png";
 import examImg from "../dist/images/cardImages/examImg.jpg";
 import useWindowSize from "../utils/useWindowSize";
 

@@ -1,7 +1,6 @@
 import React from "react";
 import Rodal from "rodal";
 import { Container, Row, Button } from "react-bootstrap";
-// import confusedRobo from "../dist/images/cardImages/confusedRobo.png";
 import confusedRobo from "../dist/images/cardImages/confusedRobo.png";
 
 const HomeModal = ({ animation, visible, setVisible }) => {
