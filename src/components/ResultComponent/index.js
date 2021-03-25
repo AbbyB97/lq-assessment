@@ -65,14 +65,14 @@ const ResultComponent = () => {
                   <React.Fragment key={i}>
                     <hr />
                     <Row>
-                      <Col xs={12}>
+                      <Col style={{overflowX:"auto"}} xs={12}>
                         {/* <p>{question.question}</p> */}
                         <MathJax
                           // className="question"
                           math={`Q.${i + 1} ${question.question}`}
                         />
                       </Col>
-                      <Col xs={12}>
+                      <Col style={{overflowX:"auto"}} xs={12}>
                         {/* <p>{question.correct}</p> */}
                         <MathJax
                           // className="question"
@@ -82,14 +82,14 @@ const ResultComponent = () => {
                           }`}
                         />
                       </Col>
-                      <Col xs={12}>
+                      <Col style={{overflowX:"auto"}} xs={12}>
                         {/* <p>{question.correct}</p> */}
                         <MathJax
                           // className="question"
                           math={`Correct Answer : ${question.correct}`}
                         />
                       </Col>
-                      <Col xs={12}>
+                      <Col style={{overflowX:"auto"}} xs={12}>
                         {/* <p>{question.question}</p> */}
 
                         <p className="text-capitalize">
