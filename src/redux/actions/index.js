@@ -2,7 +2,6 @@ import * as types from "../types";
 import quizQuestions from "../../static/questions";
 
 export const setDifficultyAction = (difficulty) => async (dispatch) => {
-  console.log("diff act", difficulty);
   dispatch({
     type: types.SET_DIFFICULTY,
     payload: difficulty,
@@ -11,7 +10,6 @@ export const setDifficultyAction = (difficulty) => async (dispatch) => {
 };
 
 export const setQuestions = (difficulty) => async (dispatch) => {
-  console.log("setQuestions act", quizQuestions[difficulty]);
   let questionSet = [...quizQuestions[difficulty]];
   dispatch({
     type: types.SET_QUESTIONS,
@@ -20,9 +18,7 @@ export const setQuestions = (difficulty) => async (dispatch) => {
 };
 
 export const setScore = (isCorrect) => async (dispatch, getState) => {
-  console.log("isCOrrect act", isCorrect);
   let score = getState().quizReducer.score;
-  console.log("score", score);
   let new_score = isCorrect ? score + 1 : score;
 
   dispatch({
@@ -32,7 +28,6 @@ export const setScore = (isCorrect) => async (dispatch, getState) => {
 };
 
 export const resetTestReducer = () => async (dispatch) => {
-  console.log("resetting test");
   dispatch({
     type: types.RESET_TEST,
   });

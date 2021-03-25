@@ -31,7 +31,6 @@ const QuizComponent = () => {
     return () => {
       if (history.action === "POP") {
         // handle any state changes necessary to set the screen display back one page.
-        console.log("backbutton press");
         history.push(`/quiz/${question}`);
         setVisible(true);
       }
@@ -41,7 +40,6 @@ const QuizComponent = () => {
   const handleNext = () => {
     if (parseInt(question) + 1 !== questionSet.length) {
       let isCorrect = questionSet[question].correct === selected;
-      console.log("answer -- ", isCorrect);
       dispatch(setScore(isCorrect));
 
       history.push(`/quiz/${parseInt(question) + 1}`);
@@ -62,11 +60,8 @@ const QuizComponent = () => {
                 <div
                   style={
                     {
-                      // minHeight: "70vh",
-                      // display: "flex",
-                      // flexDirection: "column",
-                      // alignItems: "center",
-                      // justifyContent: "center",
+                      overflowX:"scroll",
+                      paddingLeft:"5px"
                     }
                   }
                   className=""
@@ -184,7 +179,7 @@ const StyledQuizComp = styled.div`
       font-size: 0.9rem;
     }
     @media ${device.tablet} {
-      font-size: 1.2rem;
+      font-size: 1.12rem;
     }
   }
   .form-check-label {
