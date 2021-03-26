@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <FadeContainer>
       <StyledHome style={{ paddingBottom: "4rem" }}>
-        <h3 className="mb-3 pt-3">LearnQ Assignment</h3>
+        <h3 className="mb-3 pt-3">Simple Math Quiz</h3>
         <Container className="card-container pb-5 ">
           <Card>
             {loading && (
