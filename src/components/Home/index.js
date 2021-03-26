@@ -55,7 +55,7 @@ const Home = () => {
                   Select Your difficulty
                 </Card.Title>
                 <Card.Text className="text-center">
-                  The Questions will be asked as per this selection
+                  The questions will be asked as per this selection
                 </Card.Text>
                 <Row>
                   <Col md={3} xs={12}>
