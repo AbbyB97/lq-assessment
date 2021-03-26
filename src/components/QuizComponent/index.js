@@ -162,19 +162,17 @@ const QuizComponent = () => {
               </Card.Body>
               <Container>
                 <Row className="justify-content-center">
-                  {parseInt(question) !== questionSet.length - 1 && (
-                    <Col>
-                      <Row className="justify-content-center">
-                        <Button
-                          className="w-75 my-2"
-                          onClick={() => history.goBack()}
-                          variant="primary"
-                        >
-                          back
-                        </Button>
-                      </Row>
-                    </Col>
-                  )}
+                  <Col>
+                    <Row className="justify-content-center">
+                      <Button
+                        className="w-75 my-2"
+                        onClick={() => history.goBack()}
+                        variant="primary"
+                      >
+                        back
+                      </Button>
+                    </Row>
+                  </Col>
                   <Col>
                     <Row className="justify-content-center">
                       <Button

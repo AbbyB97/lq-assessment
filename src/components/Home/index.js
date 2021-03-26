@@ -35,7 +35,7 @@ const Home = () => {
     <FadeContainer>
       <StyledHome style={{ paddingBottom: "4rem" }}>
         <h3 className="mb-3 pt-3">LearnQ Assignment</h3>
-        <Container style={{ height: "100vh" }} className="card-container pb-5 ">
+        <Container className="card-container pb-5 ">
           <Card>
             {loading && (
               <div
