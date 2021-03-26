@@ -51,8 +51,10 @@ const Home = () => {
             />
             <Card.Body>
               <Container fluid>
-                <Card.Title>Select Your difficulty</Card.Title>
-                <Card.Text>
+                <Card.Title className="text-center">
+                  Select Your difficulty
+                </Card.Title>
+                <Card.Text className="text-center">
                   The Questions will be asked as per this selection
                 </Card.Text>
                 <Row>
